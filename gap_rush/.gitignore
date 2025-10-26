@@ -5,41 +5,55 @@
 *.swp
 .DS_Store
 .atom/
-.build/
 .buildlog/
 .history
 .svn/
-.swiftpm/
-migrate_working_dir/
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# Flutter/Dart
 .dart_tool/
-.flutter-plugins-dependencies
+.packages
 .pub-cache/
 .pub/
-/build/
-/coverage/
-
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+build/
+# Web-specific files
+.flutter-plugins
+.flutter-plugins-dependencies
+# Pods - https://guides.cocoapods.org/using/using-cocoapods.html
+ios/Pods/
+ios/Podfile.lock
+# Zipped Pods
+ios/Pods.zip
+# Builds
+ios/build/
+# Various generated files
+ios/.generated/
+# Xcode
+ios/**/*.mode1v3
+ios/**/*.mode2v3
+ios/**/*.moved-aside
+ios/**/*.pbxuser
+ios/**/*.perspectivev3
+ios/**/xcuserdata/
+# Android
+android/.gradle/
+android/app/build/
+android/app/src/main/assets/flutter_assets/
+# Android builds
+android/build/
+# Android various generated files
+android/.idea/
+android/captures/
+android/gen/
+android/local.properties
+android/app/src/main/java/io/flutter/plugins/
+# Windows
+windows/build/
+windows/.vs/
+# Linux
+linux/build/
+# macOS
+macos/build/
+macos/Pods/
+macos/Podfile.lock
+# Zipped Pods
+macos/Pods.zip

@@ -3,6 +3,7 @@ import 'package:flame/game.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 
+import 'perfect_streak.dart';
 import 'player.dart';
 import 'score.dart';
 import 'wall_manager.dart';
@@ -17,11 +18,15 @@ void main() {
 
 class GapRush extends FlameGame with HasCollisionDetection {
   late Score score;
+  late PerfectStreak perfectStreak;
   late TextComponent gameOverText;
 
   @override
   Future<void> onLoad() async {
+    camera.backdrop.color = const Color(0xFF111111);
+
     score = Score();
+    perfectStreak = PerfectStreak();
     gameOverText = TextComponent(
       text: 'Game Over',
       position: size / 2,
@@ -37,6 +42,7 @@ class GapRush extends FlameGame with HasCollisionDetection {
     add(Player());
     add(WallManager());
     add(score);
+    add(perfectStreak);
   }
 
   @override
