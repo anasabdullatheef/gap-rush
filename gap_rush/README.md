@@ -6,7 +6,28 @@ This guide will walk you through setting up and running the Gap Rush project on 
 
 ---
 
-## 1. Prerequisites
+## Easy Setup (Recommended)
+
+A setup script is included to automate the entire process.
+
+1.  **Navigate to the Project Directory:** Open your terminal and `cd` into the `gap_rush` directory.
+    ```bash
+    cd path/to/your/project/gap_rush
+    ```
+
+2.  **Run the Script:** Execute the setup script.
+    ```bash
+    ./setup_and_run_ios.sh
+    ```
+The script will check your environment, install any missing tools (like Homebrew and Flutter), generate the necessary project files, install dependencies, and launch the game on the iOS Simulator.
+
+---
+
+## Manual Setup
+
+If you prefer to set up the project manually, follow the steps below.
+
+### 1. Prerequisites
 
 Before you begin, ensure you have the following installed on your Mac:
 
@@ -16,9 +37,7 @@ Before you begin, ensure you have the following installed on your Mac:
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   ```
 
----
-
-## 2. Install Flutter SDK
+### 2. Install Flutter SDK
 
 1.  **Install Flutter:** The easiest way to install Flutter on macOS is using Homebrew.
     ```bash
@@ -26,7 +45,7 @@ Before you begin, ensure you have the following installed on your Mac:
     ```
 
 2.  **Configure your PATH:** You need to add the Flutter SDK to your system's PATH.
-    - Open your shell's configuration file (`.zshrc`, `.bash_profile`, etc.) in a text editor. If you're using the default Zsh shell, this is `.zshrc`.
+    - Open your shell's configuration file (`.zshrc`, `.bash_profile`, etc.) in a text editor.
       ```bash
       open ~/.zshrc
       ```
@@ -39,47 +58,39 @@ Before you begin, ensure you have the following installed on your Mac:
       source ~/.zshrc
       ```
 
-3.  **Verify the Installation:** Run the `flutter doctor` command. This tool checks your environment and displays a report of the status of your Flutter installation.
+3.  **Verify the Installation:** Run the `flutter doctor` command.
     ```bash
     flutter doctor
     ```
-    - Look for the "Xcode" and "iOS toolchain" sections. Address any issues that `flutter doctor` reports before proceeding.
+    - Address any issues that `flutter doctor` reports before proceeding.
 
----
+### 3. Project Setup
 
-## 3. Project Setup
-
-The current project directory only contains the core Flutter code. You need to generate the native iOS project files.
-
-1.  **Navigate to the Project Directory:** Open your terminal and `cd` into the `gap_rush` directory.
+1.  **Navigate to the Project Directory:** `cd` into the `gap_rush` directory.
     ```bash
     cd path/to/your/project/gap_rush
     ```
 
-2.  **Generate Platform Files:** Run the following command to create the `ios`, `android`, and other necessary directories.
+2.  **Generate Platform Files:** Run the following command to create the `ios` and `android` directories.
     ```bash
     flutter create .
     ```
-    *This command will analyze the existing code and build the platform-specific project files around it.*
 
-3.  **Install Dependencies:** Once the project files are generated, install the necessary packages defined in `pubspec.yaml`.
+3.  **Install Dependencies:** Install the packages defined in `pubspec.yaml`.
     ```bash
     flutter pub get
     ```
 
----
+### 4. Run the Game
 
-## 4. Run the Game
-
-1.  **Open the iOS Simulator:** Launch the iOS simulator from your terminal.
+1.  **Open the iOS Simulator:**
     ```bash
     open -a Simulator
     ```
 
-2.  **Run the App:** In your terminal (still inside the `gap_rush` directory), run the game.
+2.  **Run the App:**
     ```bash
     flutter run
     ```
-    - Flutter will build the app, install it on the simulator, and launch it. The first build can take a few minutes.
 
 You should now see Gap Rush running on your iOS simulator!
